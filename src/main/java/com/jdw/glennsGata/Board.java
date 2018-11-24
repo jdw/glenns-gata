@@ -74,13 +74,21 @@ public class Board {
 	
 	
 	public String toString() {
-		String ret = "";
+		String ret;
 		
-		ret += " " + (""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2)) + "\n";
-		ret += "-" + (""+board.charAt(3))+(""+board.charAt(4))+(""+board.charAt(5)) + "\n";
-		ret += "====" + "\n";
-		ret += " " + (""+board.charAt(6))+(""+board.charAt(7))+(""+board.charAt(8)) + "\n";
-		
+		if (board.contains(".") || this.testBoard()) {
+			ret = (""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2))+"-"
+				+ (""+board.charAt(3))+(""+board.charAt(4))+(""+board.charAt(5)) 
+				+ "=" 
+				+ (""+board.charAt(6))+(""+board.charAt(7))+(""+board.charAt(8));
+		}
+		else {
+			ret = (""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2))+"-"
+				+ (""+board.charAt(3))+(""+board.charAt(4))+(""+board.charAt(5)) 
+				+ "!=" 
+				+ (""+board.charAt(6))+(""+board.charAt(7))+(""+board.charAt(8));
+		}
+				
 		return ret;
 	}
 	
