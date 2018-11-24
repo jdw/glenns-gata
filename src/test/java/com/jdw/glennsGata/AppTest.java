@@ -70,4 +70,22 @@ public class AppTest
     	Board b1 = new Board();
     	assertFalse(b1.testBoard());
     }
+    
+    
+    public void test_board4() {
+    	Board b = new Board();
+        assertFalse(b.getRemainigPositions().contains(0));
+        assertFalse(b.getRemainigPositions().contains(4));
+        assertFalse(b.getRemainigPositions().contains(8));
+        
+        assertTrue(b.getRemainigPositions().contains(1));
+        assertTrue(b.getRemainigPositions().contains(2));
+        assertTrue(b.getRemainigPositions().contains(3));
+        assertTrue(b.getRemainigPositions().contains(5));
+        assertTrue(b.getRemainigPositions().contains(6));
+        assertTrue(b.getRemainigPositions().contains(7));
+        
+        assertTrue(b.setDigitAt(2, '2'));
+        assertFalse(b.getRemainigPositions().contains(2));
+    }
 }

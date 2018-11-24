@@ -2,6 +2,7 @@ package com.jdw.glennsGata;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 public class Board {
 	private String board = "9...4...1";
@@ -36,25 +37,25 @@ public class Board {
 		return true;
 	}
 	
-	public Set<Character> getRemainigDigits() {
-		Set<Character> ret = new HashSet<Character>();
+	public Stack<Character> getRemainigDigits() {
+		Stack<Character> ret = new Stack<Character>();
 		
-		if (!board.contains("2")) ret.add('2');
-		if (!board.contains("3")) ret.add('3');
-		if (!board.contains("5")) ret.add('5');
-		if (!board.contains("6")) ret.add('6');
-		if (!board.contains("7")) ret.add('7');
-		if (!board.contains("8")) ret.add('8');
+		if (!board.contains("2")) ret.push('2');
+		if (!board.contains("3")) ret.push('3');
+		if (!board.contains("5")) ret.push('5');
+		if (!board.contains("6")) ret.push('6');
+		if (!board.contains("7")) ret.push('7');
+		if (!board.contains("8")) ret.push('8');
 		
 		return ret;
 	}
 	
 	
-	public Set<Integer> getRemainigPositions() {
-		Set<Integer> ret = new HashSet<Integer>();
+	public Stack<Integer> getRemainigPositions() {
+		Stack<Integer> ret = new Stack<Integer>();
 		
 		for (int i = 0; i < board.length(); i++) {
-			
+			if (board.charAt(i) == '.') ret.push(i);
 		}
 		
 		return ret;
