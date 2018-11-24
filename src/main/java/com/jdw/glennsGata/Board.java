@@ -20,6 +20,8 @@ public class Board {
 		
 		StringBuilder tmp_board = new StringBuilder(board);
 		tmp_board.setCharAt(pos, digit);
+		board = tmp_board.toString();
+		
 		return true;
 	}
 	
@@ -29,6 +31,8 @@ public class Board {
 		
 		StringBuilder tmp_board = new StringBuilder(board);
 		tmp_board.setCharAt(pos, '.');
+		board = tmp_board.toString();
+		
 		return true;
 	}
 	
@@ -45,13 +49,42 @@ public class Board {
 		return ret;
 	}
 	
+	
+	public Set<Integer> getRemainigPositions() {
+		Set<Integer> ret = new HashSet<Integer>();
+		
+		for (int i = 0; i < board.length(); i++) {
+			
+		}
+		
+		return ret;
+	}
+	
+	
 	public boolean testBoard() {
 		if (board.contains(".")) return false;
 		
 		int numberA = Integer.valueOf((""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2)));
-		int numberB = Integer.valueOf((""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2)));
-		int numberC = Integer.valueOf((""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2)));
+		int numberB = Integer.valueOf((""+board.charAt(3))+(""+board.charAt(4))+(""+board.charAt(5)));
+		int numberC = Integer.valueOf((""+board.charAt(6))+(""+board.charAt(7))+(""+board.charAt(8)));
 		
 		return (numberA - numberB == numberC);
+	}
+	
+	
+	public String toString() {
+		String ret = "";
+		
+		ret += " " + (""+board.charAt(0))+(""+board.charAt(1))+(""+board.charAt(2)) + "\n";
+		ret += "-" + (""+board.charAt(3))+(""+board.charAt(4))+(""+board.charAt(5)) + "\n";
+		ret += "====" + "\n";
+		ret += " " + (""+board.charAt(6))+(""+board.charAt(7))+(""+board.charAt(8)) + "\n";
+		
+		return ret;
+	}
+	
+	
+	public boolean equals(Board that) {
+		return (this.board.equals(that.board));
 	}
 }
