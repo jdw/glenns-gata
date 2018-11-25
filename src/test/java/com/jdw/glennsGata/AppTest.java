@@ -88,4 +88,14 @@ public class AppTest
         assertTrue(b.setDigitAt(2, '2'));
         assertFalse(b.getRemainigPositions().contains(2));
     }
+    
+    
+    public void test_board5() {
+    	Board b1 = new Board();
+    	
+    	assertTrue(b1.setDigitAt(2, '2'));
+    	assertFalse(b1.getRemainigDigits().contains('2'));
+    	assertTrue(b1.removeDigitAt(2));
+    	assertTrue(b1.getRemainigDigits().contains('2'));
+    }
 }
