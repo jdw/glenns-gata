@@ -1,7 +1,5 @@
 package com.jdw.glennsGata;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Stack;
 
 public class Board {
@@ -10,8 +8,9 @@ public class Board {
 	
 	public Board() {}
 	public Board(Board original) {
-		this.board = original.board;
+		this.board = ""+original.board;
 	}
+	
 	
 	public boolean setDigitAt(int pos, char digit) {
 		if (pos < 0 || pos > 8) return false;
@@ -25,6 +24,7 @@ public class Board {
 		
 		return true;
 	}
+	
 	
 	public boolean removeDigitAt(int pos) {
 		if (pos < 0 || pos > 8) return false;
